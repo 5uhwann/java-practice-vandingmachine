@@ -1,4 +1,4 @@
-package vendingmachine;
+package vendingmachine.domain.coinmanager;
 
 public enum Coin {
     COIN_500(500),
@@ -13,4 +13,11 @@ public enum Coin {
     }
 
     // 추가 기능 구현
+    public int getAmount() {
+        return amount;
+    }
+
+    public boolean isAbleCoin(int remainderAmount) {
+        return remainderAmount >= amount;
+    }
 }
