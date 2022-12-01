@@ -1,4 +1,4 @@
-package vendingmachine.domain.coinmanager;
+package vendingmachine.domain.moneymanager;
 
 import java.util.List;
 

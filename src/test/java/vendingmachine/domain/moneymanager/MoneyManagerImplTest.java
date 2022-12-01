@@ -1,4 +1,4 @@
-package vendingmachine.domain.coinmanager;
+package vendingmachine.domain.moneymanager;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -7,16 +7,16 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-class CoinManagerImplTest {
+class MoneyManagerImplTest {
 
-    private static final CoinManager coinManager = new CoinManagerImpl();
+    private static final MoneyManager moneyManager = new MoneyManagerImpl();
 
     @ParameterizedTest
     @ValueSource(ints = {900, 450, 130, 100, 50, 10})
     @DisplayName("입력된 총 금액만큼의 동전들이 생성된다.")
     void makeMoneyBox(int totalAmount) {
         //given //when
-        MoneyBox moneyBox = coinManager.makeMoneyBox(totalAmount);
+        MoneyBox moneyBox = moneyManager.makeMoneyBox(totalAmount);
 
         //then
         List<Coin> coins = moneyBox.getCoins();
