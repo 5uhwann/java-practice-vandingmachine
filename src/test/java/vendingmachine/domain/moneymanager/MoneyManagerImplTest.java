@@ -27,4 +27,19 @@ class MoneyManagerImplTest {
         assertThat(moneyBoxAmount).isEqualTo(totalAmount);
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = {2000, 3000})
+    @DisplayName("투입된 금액을 저장소에 저장한다.")
+    void saveInputAmountTest(int receivedAmount) {
+        //given
+        MoneyBox moneyBox = moneyManager.makeMoneyBox(2000);
+        InputAmount inputAmount = new InputAmount(receivedAmount);
+
+        //when
+        moneyManager.saveInputAmount(moneyBox, inputAmount);
+
+        //then
+        assertThat(moneyBox.getInputAmount()).isEqualTo(receivedAmount);
+    }
+
 }
