@@ -20,4 +20,9 @@ public class MoneyManagerImpl implements MoneyManager {
         }
        return new MoneyBox(coins);
     }
+
+    @Override
+    public void saveInputAmount(MoneyBox moneyBox, InputAmount inputAmount) {
+        moneyBox.setInputAmount(inputAmount.getInputAmount());
+    }
 }
