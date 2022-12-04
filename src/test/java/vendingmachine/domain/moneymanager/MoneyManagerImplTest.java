@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -36,10 +37,26 @@ class MoneyManagerImplTest {
         InputAmount inputAmount = new InputAmount(receivedAmount);
 
         //when
-        moneyManager.saveInputAmount(moneyBox, inputAmount);
+        moneyManager.saveInputAmount(inputAmount);
 
         //then
         assertThat(moneyBox.getInputAmount()).isEqualTo(receivedAmount);
+    }
+
+    @Test
+    @DisplayName("투입 금액을 최신화한다.")
+    void updateInputAmountTest() {
+        //given
+        MoneyBox moneyBox = moneyManager.makeMoneyBox(2000);
+        moneyManager.saveInputAmount(new InputAmount(3000));
+        int updateInputAmount = 1500;
+
+        //when
+        moneyManager.updateInputAmount(updateInputAmount);
+
+        //then
+        assertThat(moneyBox.getInputAmount()).isEqualTo(updateInputAmount);
+
     }
 
 }
