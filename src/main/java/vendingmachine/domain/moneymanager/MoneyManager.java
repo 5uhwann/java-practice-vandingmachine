@@ -4,6 +4,8 @@ public interface MoneyManager {
 
     MoneyBox makeMoneyBox(int totalAmount);
 
-    void saveInputAmount(MoneyBox moneyBox, InputAmount inputAmount);
+    void saveInputAmount(InputAmount inputAmount);
+
+    void updateInputAmount(int updatedInputAmount);
 
 }

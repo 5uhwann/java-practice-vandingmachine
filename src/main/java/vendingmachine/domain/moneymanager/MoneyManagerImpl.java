@@ -7,6 +7,8 @@ import java.util.List;
 
 public class MoneyManagerImpl implements MoneyManager {
 
+    private MoneyBox moneyBox;
+
     @Override
     public MoneyBox makeMoneyBox(int totalAmount) {
         int remainderAmount = totalAmount;
@@ -18,11 +20,17 @@ public class MoneyManagerImpl implements MoneyManager {
                 remainderAmount -= coin.getAmount();
             }
         }
-       return new MoneyBox(coins);
+        moneyBox = new MoneyBox(coins);
+        return moneyBox;
     }
 
     @Override
-    public void saveInputAmount(MoneyBox moneyBox, InputAmount inputAmount) {
+    public void saveInputAmount(InputAmount inputAmount) {
         moneyBox.setInputAmount(inputAmount.getInputAmount());
+    }
+
+    @Override
+    public void updateInputAmount(int updatedInputAmount) {
+        moneyBox.setInputAmount(updatedInputAmount);
     }
 }
