@@ -33,4 +33,9 @@ public class MoneyManagerImpl implements MoneyManager {
     public void updateInputAmount(int updatedInputAmount) {
         moneyBox.setInputAmount(updatedInputAmount);
     }
+
+    @Override
+    public List<Coin> payChangeCoin(int change) {
+        return moneyBox.withdrawCoin(change);
+    }
 }
