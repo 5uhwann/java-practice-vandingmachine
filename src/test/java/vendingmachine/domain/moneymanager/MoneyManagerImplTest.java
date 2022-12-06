@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import vendingmachine.domain.moneymanager.coin.Coin;
+import vendingmachine.domain.moneymanager.coin.CoinDto;
 
 class MoneyManagerImplTest {
 
@@ -57,6 +58,20 @@ class MoneyManagerImplTest {
 
         //then
         assertThat(moneyBox.getInputAmount()).isEqualTo(updateInputAmount);
+
+    }
+
+    @Test
+    @DisplayName("보유 동전을 조회한다.")
+    void inquiryCoinsTest() {
+        //given
+        moneyManager.makeMoneyBox(2000);
+
+        //when
+        CoinDto coinDto = moneyManager.inquiryCoins();
+
+        //then
+        assertThat(coinDto.toString()).contains("자판기가 보유한 동전", "500원 - ", "100원 - ", "50원 - ", "10원 - ");
 
     }
 
