@@ -1,11 +1,12 @@
 package vendingmachine.domain.moneymanager;
 
 import static org.assertj.core.api.Assertions.*;
-import static vendingmachine.domain.moneymanager.Coin.*;
+import static vendingmachine.domain.moneymanager.coin.Coin.*;
 
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import vendingmachine.domain.moneymanager.coin.Coin;
 
 class MoneyBoxTest {
 

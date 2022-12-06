@@ -4,6 +4,7 @@ package vendingmachine.domain.moneymanager;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
+import vendingmachine.domain.moneymanager.coin.Coin;
 
 public class MoneyManagerImpl implements MoneyManager {
 

@@ -1,6 +1,7 @@
 package vendingmachine.domain.moneymanager;
 
 import java.util.List;
+import vendingmachine.domain.moneymanager.coin.Coin;
 
 public interface MoneyManager {
 

@@ -1,4 +1,4 @@
-package vendingmachine.domain.moneymanager;
+package vendingmachine.domain.moneymanager.coin;
 
 public enum Coin {
     COIN_500(500),
