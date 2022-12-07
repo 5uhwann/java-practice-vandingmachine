@@ -10,6 +10,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import vendingmachine.domain.moneymanager.coin.Coin;
 import vendingmachine.domain.moneymanager.coin.CoinDto;
 import vendingmachine.domain.moneymanager.inputamount.InputAmount;
+import vendingmachine.domain.moneymanager.inputamount.InputAmountDto;
 
 class MoneyManagerImplTest {
 
@@ -73,6 +74,21 @@ class MoneyManagerImplTest {
 
         //then
         assertThat(coinDto.toString()).contains("자판기가 보유한 동전", "500원 - ", "100원 - ", "50원 - ", "10원 - ");
+
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {1000, 500})
+    void inquiryInputAmount(int inputAmount) {
+        //given
+        moneyManager.makeMoneyBox(2000);
+        moneyManager.saveInputAmount(new InputAmount(inputAmount));
+
+        //when
+        InputAmountDto inputAmountDto = moneyManager.inquiryInputAmount();
+
+        //then
+        assertThat(inputAmountDto.toString()).contains("투입 금액: ", String.valueOf(inputAmount), "원");
 
     }
 
