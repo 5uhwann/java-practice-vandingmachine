@@ -1,4 +1,4 @@
-package vendingmachine.domain.moneymanager;
+package vendingmachine.domain.moneymanager.inputamount;
 
 public class InputAmount {
 

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import vendingmachine.domain.moneymanager.InputAmount;
+import vendingmachine.domain.moneymanager.inputamount.InputAmount;
 import vendingmachine.domain.moneymanager.MoneyBox;
 import vendingmachine.domain.moneymanager.MoneyManager;
 import vendingmachine.domain.moneymanager.MoneyManagerImpl;

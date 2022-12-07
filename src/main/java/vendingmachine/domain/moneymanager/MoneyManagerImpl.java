@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import vendingmachine.domain.moneymanager.coin.Coin;
 import vendingmachine.domain.moneymanager.coin.CoinDto;
+import vendingmachine.domain.moneymanager.inputamount.InputAmount;
 
 public class MoneyManagerImpl implements MoneyManager {
 

@@ -9,6 +9,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import vendingmachine.domain.moneymanager.coin.Coin;
 import vendingmachine.domain.moneymanager.coin.CoinDto;
+import vendingmachine.domain.moneymanager.inputamount.InputAmount;
 
 class MoneyManagerImplTest {
 
