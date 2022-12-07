@@ -4,6 +4,7 @@ import java.util.List;
 import vendingmachine.domain.moneymanager.coin.Coin;
 import vendingmachine.domain.moneymanager.coin.CoinDto;
 import vendingmachine.domain.moneymanager.inputamount.InputAmount;
+import vendingmachine.domain.moneymanager.inputamount.InputAmountDto;
 
 public interface MoneyManager {
 
@@ -16,5 +17,7 @@ public interface MoneyManager {
     List<Coin> payChangeCoin(int change);
 
     CoinDto inquiryCoins();
+
+    InputAmountDto inquiryInputAmount();
 
 }

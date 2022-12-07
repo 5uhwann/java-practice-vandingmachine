@@ -7,6 +7,7 @@ import java.util.List;
 import vendingmachine.domain.moneymanager.coin.Coin;
 import vendingmachine.domain.moneymanager.coin.CoinDto;
 import vendingmachine.domain.moneymanager.inputamount.InputAmount;
+import vendingmachine.domain.moneymanager.inputamount.InputAmountDto;
 
 public class MoneyManagerImpl implements MoneyManager {
 
@@ -45,5 +46,10 @@ public class MoneyManagerImpl implements MoneyManager {
     @Override
     public CoinDto inquiryCoins() {
         return new CoinDto(moneyBox.getCoins());
+    }
+
+    @Override
+    public InputAmountDto inquiryInputAmount() {
+        return new InputAmountDto(new InputAmount(moneyBox.getInputAmount()));
     }
 }
