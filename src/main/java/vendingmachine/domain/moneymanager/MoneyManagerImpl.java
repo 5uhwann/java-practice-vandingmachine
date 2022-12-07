@@ -4,6 +4,7 @@ package vendingmachine.domain.moneymanager;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
+import vendingmachine.domain.moneymanager.coin.ChangeCoinDto;
 import vendingmachine.domain.moneymanager.coin.Coin;
 import vendingmachine.domain.moneymanager.coin.CoinDto;
 import vendingmachine.domain.moneymanager.inputamount.InputAmount;
@@ -39,8 +40,8 @@ public class MoneyManagerImpl implements MoneyManager {
     }
 
     @Override
-    public List<Coin> payChangeCoin(int change) {
-        return moneyBox.withdrawCoin(change);
+    public ChangeCoinDto payChangeCoin(int change) {
+        return new ChangeCoinDto(moneyBox.withdrawCoin(change));
     }
 
     @Override
