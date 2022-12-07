@@ -15,15 +15,12 @@ public class CoinDto {
         this.coins = coins;
     }
 
-
-
     public String toString() {
         return  PREFIX_FIRST + "\n" +
                 COIN_500.getKoreanTag() + countCoin(coins, COIN_500) + PREFIX_LAST + "\n" +
                 COIN_100.getKoreanTag() + countCoin(coins, COIN_100) + PREFIX_LAST + "\n" +
                 COIN_50.getKoreanTag() + countCoin(coins, COIN_50) + PREFIX_LAST + "\n" +
                 COIN_10.getKoreanTag() + countCoin(coins, COIN_10) + PREFIX_LAST;
-
     }
 
     private String countCoin(List<Coin> coins, Coin coinType) {
